@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenByte - Akıllı Sera Sistemleri</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <div class="login-left">
+                <div class="login-header">
+                    <div class="logo">
+                        <i class="fas fa-leaf logo-icon"></i>
+                        <h1>GreenByte</h1>
+                    </div>
+                    <p class="slogan">Akıllı Sera Sistemleri</p>
+                </div>
+                <div class="login-info">
+                    <h2>Seranızın kontrolü parmaklarınızın ucunda</h2>
+                    <p>Sıcaklık, nem, ışık ve sulama sistemlerinizi tek bir platformdan yönetin.</p>
+                    <ul class="features">
+                        <li><i class="fas fa-temperature-high"></i> Sıcaklık Kontrolü</li>
+                        <li><i class="fas fa-tint"></i> Nem Takibi</li>
+                        <li><i class="fas fa-lightbulb"></i> Aydınlatma Yönetimi</li>
+                        <li><i class="fas fa-seedling"></i> Bitki Gelişim Analizi</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="login-right">
+                <div class="login-form-container">
+                    <h2>Giriş Yap</h2>
+                    
+                    <!-- Hata mesajı için kontrol -->
+                    <div id="error-message" class="error-message" style="display: none;"></div>
+                    
+                    <form id="loginForm" method="post" action="login.php">
+                        <div class="form-group">
+                            <label for="username"><i class="fas fa-user"></i> Kullanıcı Adı</label>
+                            <input type="text" id="username" name="kullanici_adi" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password"><i class="fas fa-lock"></i> Şifre</label>
+                            <input type="password" id="password" name="sifre" required>
+                        </div>
+                        <div class="form-options">
+                            <div class="remember-me">
+                                <input type="checkbox" id="remember" name="remember">
+                                <label for="remember">Beni Hatırla</label>
+                            </div>
+                            <div class="forgot-password">
+                                <a href="sifre-sifirlama.php">Şifremi Unuttum</a>
+                            </div>
+                        </div>
+                        <button type="submit" class="login-btn">Giriş Yap</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 GreenByte Akıllı Sera Sistemleri. Tüm hakları saklıdır.</p>
+        </div>
+    </div>
+
+    <script>
+    // URL'deki hata parametresini kontrol et ve hata mesajını göster
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const errorParam = urlParams.get('error');
+        
+        if (errorParam) {
+            const errorDiv = document.getElementById('error-message');
+            errorDiv.style.display = 'block';
+            
+            switch (errorParam) {
+                case 'empty_fields':
+                    errorDiv.textContent = 'Kullanıcı adı ve şifre gereklidir.';
+                    break;
+                case 'invalid_password':
+                case 'invalid_username':
+                    errorDiv.textContent = 'Geçersiz kullanıcı adı veya şifre.';
+                    break;
+                case 'database':
+                    errorDiv.textContent = 'Veritabanı hatası oluştu.';
+                    break;
+                case 'invalid_method':
+                    errorDiv.textContent = 'Geçersiz istek metodu.';
+                    break;
+                default:
+                    errorDiv.textContent = 'Bir hata oluştu. Lütfen tekrar deneyin.';
+            }
+        }
+    });
+    </script>
+</body>
+</html>

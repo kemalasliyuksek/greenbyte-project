@@ -1,0 +1,309 @@
+/* Genel Stil Ayarları */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary-green: #2e7d32;
+    --secondary-green: #4caf50;
+    --light-green: #a5d6a7;
+    --very-light-green: #e8f5e9;
+    --dark-green: #1b5e20;
+    --white: #ffffff;
+    --gray: #f5f5f5;
+    --dark-gray: #333333;
+}
+
+body {
+    background-color: var(--gray);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* Login Container Stilleri */
+.login-container {
+    display: flex;
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Sol Taraf Stilleri */
+.login-left {
+    background: linear-gradient(135deg, var(--secondary-green), var(--dark-green));
+    color: var(--white);
+    padding: 50px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-header {
+    margin-bottom: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logo-icon {
+    font-size: 2.5rem;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.slogan {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.login-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.login-info p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.features {
+    list-style: none;
+}
+
+.features li {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.features li i {
+    margin-right: 10px;
+    color: var(--light-green);
+}
+
+/* Sağ Taraf Stilleri */
+.login-right {
+    padding: 50px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+}
+
+.login-form-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-form-container h2 {
+    color: var(--dark-green);
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+}
+
+.form-group label i {
+    color: var(--primary-green);
+    margin-right: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--secondary-green);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 5px;
+}
+
+.forgot-password a {
+    color: var(--primary-green);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+    color: var(--dark-green);
+    text-decoration: underline;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: var(--dark-green);
+}
+
+/* Hata Mesajı Stili */
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border-left: 4px solid #c62828;
+    font-size: 0.9rem;
+}
+
+/* Başarılı Giriş Stilleri */
+.success-icon {
+    text-align: center;
+    margin: 0 auto 20px;
+}
+
+.success-icon i {
+    font-size: 5rem;
+    color: var(--secondary-green);
+    animation: pulse 1.5s infinite;
+}
+
+.success-message {
+    font-size: 1.5rem;
+    color: var(--dark-green);
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.countdown {
+    font-size: 1.2rem;
+    color: var(--primary-green);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.loading-bar {
+    height: 5px;
+    background-color: #e0e0e0;
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.loading-progress {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, var(--secondary-green), var(--dark-green));
+    animation: loading 3s linear forwards;
+    transform-origin: left;
+    transform: scaleX(0);
+}
+
+@keyframes loading {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+/* Footer Stilleri */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    font-size: 0.8rem;
+}
+
+/* Responsive Dizayn */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+    }
+    
+    .login-left, .login-right {
+        width: 100%;
+        padding: 30px;
+    }
+    
+    .login-left {
+        padding-bottom: 50px;
+    }
+    
+    .login-form-container {
+        max-width: 100%;
+    }
+}
